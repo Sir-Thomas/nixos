@@ -46,12 +46,13 @@
     vim
     neovim
     wget
-    git
-    curl
     foot
-    tofi
-    waybar
     zellij
+    waybar
+    tofi
+    git
+    pulseaudio
+    brightnessctl
     obsidian
   ];
 
