@@ -14,7 +14,6 @@
 		enable = true;
 		shellAliases = {
 			nrs = "sudo nixos-rebuild switch --flake ~/nixos/";
-			wifi = "nmcli device wifi connect ATTfiMg4I2 --ask";
 		};
 		bashrcExtra = ''
 			if [[ -z "$ZELLIJ" ]]; then
