@@ -32,7 +32,15 @@
   security.sudo.wheelNeedsPassword = false;
 
   programs.firefox.enable = true;
-  programs.steam.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
 
   environment.systemPackages = with pkgs; [
     vim
@@ -45,8 +53,6 @@
     waybar
     zellij
     obsidian
-    steam-run
-    vmware-horizon-client
   ];
 
   environment.variables.EDITOR = "nvim";
