@@ -41,15 +41,16 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim
-    neovim
-    wget
     foot
-    zellij
-    waybar
-    tofi
     git
+    neovim
     obsidian
+    tofi
+    tree
+    vim
+    waybar
+    wget
+    zellij
   ];
 
   environment.variables.EDITOR = "nvim";
