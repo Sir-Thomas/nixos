@@ -17,19 +17,6 @@
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos/";
     };
-    bashrcExtra = ''
-      if [[ -z "$ZELLIJ" ]]; then
-        if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-          zellij attach -c
-        else
-          zellij
-        fi
-
-        if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-          exit
-        fi
-      fi
-    '';
     profileExtra = ''
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
         exec uwsm start -S hyprland-uwsm.desktop
