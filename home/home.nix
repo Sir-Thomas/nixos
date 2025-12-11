@@ -7,19 +7,21 @@
   programs.git = {
     enable = true;
     settings = {
-      init.defaultBranch = "main";
       user.name = "Sir-Thomas";
       user.email = "tp8153@gmail.com";
+      init.defaultBranch = "main";
     };
   };
   programs.bash = {
     enable = true;
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos/";
+      gc = "sudo nix-collect-garbage -d";
+      cb = "sudo /run/current-system/bin/switch-to-configuration boot";
     };
     profileExtra = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec uwsm start -S hyprland-uwsm.desktop
+      if uwsm check may-start; then
+        exec uwsm start hyprland-uwsm.desktop
       fi
     '';
   };
