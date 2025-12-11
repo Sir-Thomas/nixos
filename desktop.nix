@@ -9,7 +9,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "desktop-nixos";
+  networking.hostName = "desktop";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";
@@ -49,7 +49,6 @@
     waybar
     tofi
     git
-    pulseaudio
     obsidian
   ];
 
