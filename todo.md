@@ -1,7 +1,7 @@
 # Goals
 - [x] Build system using flakes
 - [x] Use Home Manager to configure dotfiles
-- [ ] Organize into scalable structure
+- [x] Organize into scalable structure
 - [ ] Combine configuration for all devices
 - [ ] Manage secrets with one of the following
   - sops-nix
