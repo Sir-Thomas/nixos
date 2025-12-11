@@ -49,6 +49,7 @@ button:hover {
 }
 
 #clock,
+#pulseaudio,
 #custom-sep,
 #battery,
 #cpu,
@@ -67,6 +68,11 @@ button:hover {
 #clock {
     color: @cyn;
     border-bottom: 4px solid @cyn;
+}
+
+#pulseaudio {
+    color: @red;
+    border-bottom: 4px solid @red;
 }
 
 #battery {
