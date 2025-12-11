@@ -13,20 +13,18 @@
         "custom/sep"
     ],
     "modules-center": [
-        "custom/sep",
-        "clock",
-        "custom/sep"
+	"custom/sep",
+	"clock",
+	"custom/sep"
     ],
 
     "modules-right": [
+	"custom/sep",
+	"pulseaudio",
         "custom/sep",
         "network",
         "custom/sep",
-        "cpu",
-        "custom/sep",
-        "memory",
-        "custom/sep",
-        "disk",
+        "battery",
         "custom/sep",
         "tray"
     ],
@@ -54,22 +52,29 @@
         // }
     },
     "clock": {
-        "format": "{:%I:%M %p %Y-%m-%d}",
+	"format": "{:%I:%M %p %Y-%m-%d}",
 	"tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+	"format-bluetooth": "{icon} {volume}%",
+	"format-muted": "󰖁",
+	"format-icons": {
+	    "headphone": "󰂯",
+	    "default": ["󰕿", "󰖀", "󰕾"]
+	}
     },
     "cpu": {
         "format": "CPU: {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "Mem: {used}GiB",
-	"tooltip-format": "Used: {used}GiB {percentage}%\nTotal: {total}GiB\nSwap: {swapUsed}GiB {swapPercentage}%\nTotal Swap: {swapTotal}GiB"
+        "format": "Mem: {used}GiB"
     },
     "disk": {
         "interval": 60,
         "path": "/",
-        "format": "Disk: {free}",
-	"tooltip-format": "Used: {used} {percentage_used}%\nTotal: {total}"
+        "format": "Disk: {free}"
     },
     "battery": {
         "states": {
@@ -78,10 +83,13 @@
             "critical": 15
         },
         "format": "Bat: {capacity}% {icon} {time}",
-        "format-plugged": "{capacity}% ",
+	"format-plugged": "Bat: {capacity}% 󰂄",
+	"format-warning": "Bat: {capacity}% 󱃍",
+	"format-critical": "Bat: {capacity}% 󱟩",
         "format-alt": "Bat {capacity}%",
         "format-time": "{H}:{M}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
+	"interval": 5
     },
     "network": {
         "format": "Online",
