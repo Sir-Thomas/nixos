@@ -1,0 +1,19 @@
+# Goals
+- [x] Build system using flakes
+- [x] Use Home Manager to configure dotfiles
+- [ ] Organize into scalable structure
+- [ ] Combine configuration for all devices
+- [ ] Manage secrets with one of the following
+  - sops-nix
+    - secrets remain encrypted on device
+    - all secrets in one file
+    - robust, but difficult to configure
+  - agenix
+    - secrets remain encrypted on device
+    - one file per secret
+    - middle ground
+  - git-crypt
+    - secrets in plain text on device
+    - secrets encrypted when pushing to github
+    - decrypted when pulling (with key)
+    - easiest to configure
