@@ -4,8 +4,9 @@
   imports =
     [
       ./hardware/desktop-hardware.nix
-      ./common/optional/hyprland.nix
       ./common/core/default.nix
+      ./common/optional/desktop.nix
+      ./common/optional/gaming.nix
     ];
 
   networking.hostName = "desktop";
@@ -21,21 +22,7 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  programs.firefox.enable = true;
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-  };
-
   environment.systemPackages = with pkgs; [
-    foot
-    obsidian
-    pulseaudio
-    tofi
-    waybar
   ];
 
   services.printing.enable = true;
