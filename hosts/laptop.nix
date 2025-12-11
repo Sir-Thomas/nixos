@@ -36,17 +36,18 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim
-    neovim
-    wget
-    foot
-    zellij
-    waybar
-    tofi
-    git
-    pulseaudio
     brightnessctl
+    foot
+    git
+    neovim
     obsidian
+    pulseaudio
+    tofi
+    tree
+    vim
+    waybar
+    wget
+    zellij
   ];
 
   environment.variables.EDITOR = "nvim";

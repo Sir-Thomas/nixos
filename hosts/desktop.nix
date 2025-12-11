@@ -40,6 +40,7 @@
     git
     neovim
     obsidian
+    pulseaudio
     tofi
     tree
     vim
