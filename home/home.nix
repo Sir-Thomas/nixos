@@ -23,9 +23,9 @@
       fi
     '';
   };
-  home.file.".config/hypr".source = ./hypr;
-  home.file.".config/waybar".source = ./waybar;
-  home.file.".config/foot".source = ./foot;
+  home.file.".config/hypr".source = ./configs/hypr;
+  home.file.".config/waybar".source = ./configs/waybar;
+  home.file.".config/foot".source = ./configs/foot;
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;

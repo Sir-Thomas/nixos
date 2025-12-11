@@ -19,7 +19,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.tommy = import ./home.nix;
+            users.tommy = import ./home/home.nix;
             backupFileExtension = "backup";
           };
         }
