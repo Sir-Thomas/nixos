@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware/laptop-hardware.nix
+      ./common/optional/hyprland.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -13,21 +14,6 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";
-
-  programs.uwsm = {
-    enable = true;
-    waylandCompositors.hyprland = {
-      prettyName = "Hyprland";
-      comment = "Hyprland compositor managed by UWSM";
-      binPath = "/run/current-system/sw/bin/Hyprland";
-    };
-  };
-
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
 
   users.extraGroups.plugdev = { };
   users.extraGroups.dialout = { };
