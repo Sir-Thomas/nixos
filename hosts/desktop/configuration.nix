@@ -3,10 +3,10 @@
 {
   imports =
     [
-      ./hardware/desktop-hardware.nix
-      ./common/core/default.nix
-      ./common/optional/desktop.nix
-      ./common/optional/gaming.nix
+      ./hardware-configuration.nix
+      ../common/core/default.nix
+      ../common/optional/desktop.nix
+      ../common/optional/gaming.nix
     ];
 
   networking.hostName = "desktop";

@@ -14,7 +14,7 @@
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/desktop.nix
+          ./hosts/desktop/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -29,7 +29,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	modules = [
-	  ./hosts/laptop.nix
+	  ./hosts/laptop/configuration.nix
 	  home-manager.nixosModules.home-manager
 	  {
 	    home-manager = {
