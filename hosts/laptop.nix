@@ -5,15 +5,10 @@
     [
       ./hardware/laptop-hardware.nix
       ./common/optional/hyprland.nix
+      ./common/core/default.nix
     ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   networking.hostName = "laptop";
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "America/Chicago";
 
   users.extraGroups.plugdev = { };
   users.extraGroups.dialout = { };
@@ -38,31 +33,17 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     foot
-    git
-    neovim
     obsidian
     pulseaudio
     tofi
-    tree
-    vim
     waybar
-    wget
-    zellij
   ];
 
-  environment.variables.EDITOR = "nvim";
-
-  services.openssh.enable = true;
-  services.tailscale.enable = true;
   services.printing.enable = true;
 
   services.logind.settings.Login = {
     HandlePowerKey = "suspend";
   };
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
 
   # Fix for Intel AX210 bluetooth issues
   boot.extraModprobeConfig = ''
@@ -89,8 +70,6 @@
     };
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.05";
 
 }
