@@ -6,7 +6,8 @@
 - [x] Build system using flakes
 - [x] Use Home Manager to configure dotfiles
 - [x] Organize into scalable structure
-- [ ] Combine configuration for all devices
+- [x] Combine configuration for all devices
+- [ ] Remove duplication
 - [ ] Manage secrets with one of the following
   - sops-nix
     - secrets remain encrypted on device
