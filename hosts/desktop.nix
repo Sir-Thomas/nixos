@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./hardware-configuration-desktop.nix
+      ./hardware/desktop-hardware.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -13,6 +13,15 @@
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";
+
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors.hyprland = {
+      prettyName = "Hyprland";
+      comment = "Hyprland compositor managed by UWSM";
+      binPath = "/run/current-system/sw/bin/Hyprland";
+    };
+  };
 
   programs.hyprland = {
     enable = true;
