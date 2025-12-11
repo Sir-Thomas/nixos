@@ -6,9 +6,11 @@
   home.stateVersion = "24.05";
   programs.git = {
     enable = true;
-    userName = "Sir-Thomas";
-    userEmail = "tp8153@gmail.com";
-    extraConfig.init.defaultBranch = "main";
+    settings = {
+      init.defaultBranch = "main";
+      user.name = "Sir-Thomas";
+      user.email = "tp8153@gmail.com";
+    };
   };
   programs.bash = {
     enable = true;
