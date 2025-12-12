@@ -10,6 +10,7 @@
 
   environment.systemPackages = with pkgs; [
     foot
+    loupe
     obsidian
     pulseaudio
     tofi
