@@ -11,22 +11,10 @@
 
   networking.hostName = "desktop";
 
-  users.extraGroups.plugdev = { };
-  users.extraGroups.dialout = { };
-  users.users.tommy = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "plugdev" "dialout" ];
-    packages = with pkgs; [
-    ];
-  };
-
-  security.sudo.wheelNeedsPassword = false;
-
   environment.systemPackages = with pkgs; [
   ];
 
   services.printing.enable = true;
 
-  system.stateVersion = "24.05"; # Did you read the comment?
-
+  system.stateVersion = "24.05";
 }

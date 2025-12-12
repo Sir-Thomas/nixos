@@ -1,13 +1,13 @@
 # Urgent
-- [ ] Fix hyprland not starting on desktop
-- [ ] Fix mouse sensitivity on desktop
+- [x] Fix hyprland not starting on desktop
+- [x] Fix mouse sensitivity on desktop
 
 # Goals
 - [x] Build system using flakes
 - [x] Use Home Manager to configure dotfiles
 - [x] Organize into scalable structure
 - [x] Combine configuration for all devices
-- [ ] Remove duplication
+- [x] Remove duplication
 - [ ] Manage secrets with one of the following
   - sops-nix
     - secrets remain encrypted on device

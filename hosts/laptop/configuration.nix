@@ -11,23 +11,13 @@
 
   networking.hostName = "laptop";
 
-  users.extraGroups.plugdev = { };
-  users.extraGroups.dialout = { };
-  users.users.tommy = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "plugdev" "dialout" ];
-    packages = with pkgs; [
-    ];
-  };
-
-  security.sudo.wheelNeedsPassword = false;
-
   environment.systemPackages = with pkgs; [
     brightnessctl
+    powertop
   ];
 
   services.printing.enable = true;
-
+  services.tlp.enable = true;
   services.logind.settings.Login = {
     HandlePowerKey = "suspend";
   };
@@ -58,6 +48,5 @@
   };
 
   system.stateVersion = "25.05";
-
 }
 
