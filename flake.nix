@@ -20,7 +20,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.tommy = import ./home/home.nix;
+              users.tommy = import ./home/desktop.nix;
               backupFileExtension = "backup";
             };
           }
@@ -35,7 +35,22 @@
 	    home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.tommy = import ./home/home.nix;
+              users.tommy = import ./home/laptop.nix;
+              backupFileExtension = "backup";
+	    };
+	  }
+	];
+      };
+      server = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	modules = [
+	  ./hosts/server/configuration.nix
+	  home-manager.nixosModules.home-manager
+	  {
+	    home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.tommy = import ./home/server.nix;
               backupFileExtension = "backup";
 	    };
 	  }
