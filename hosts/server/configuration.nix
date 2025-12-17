@@ -10,6 +10,8 @@
 
   networking.hostName = "server"; # Define your hostname.
 
+  powerManagement.powertop.enable = true;
+
   environment.systemPackages = with pkgs; [
   ];
 
