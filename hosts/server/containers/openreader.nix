@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  virtualisation.oci-containers.openreader = {
+  virtualisation.oci-containers.containers.openreader = {
     image = "ghcr.io/richardr1126/openreader-webui:latest";
     volumes = [ "openreader_docstore:/app/docstore" ];
     ports = [ "3003:3003" ];
