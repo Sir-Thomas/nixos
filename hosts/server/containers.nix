@@ -1,6 +1,9 @@
 { ... }:
 
 {
+  import = [
+    ./containers/audiobookshelf.nix
+  ];
   virtualisation.podman.defaultNetwork.settings.dns_enabled = true;
   virtualisation.oci-containers = {
     backend = "podman";
