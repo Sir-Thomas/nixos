@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/core/default.nix
-      ./containers/all-containers.nix
+      ./services/all-services.nix
     ];
 
   networking.hostName = "server"; # Define your hostname.
