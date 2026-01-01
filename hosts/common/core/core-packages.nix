@@ -5,6 +5,7 @@
     git
     neovim
     tree
+    usbutils
     wget
     zellij
   ];
