@@ -15,6 +15,8 @@
   environment.systemPackages = with pkgs; [
   ];
 
+  hardware.bluetooth.enable = true;
+
   services.printing.enable = true;
 
   system.stateVersion = "24.05";
