@@ -27,5 +27,11 @@
       enableBashIntegration = true;
       nix-direnv.enable = true;
     };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      vimAlias = true;
+    };
   };
+  home.file.".config/nvim".source = ./nvim;
 }
