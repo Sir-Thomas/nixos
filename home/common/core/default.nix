@@ -3,7 +3,7 @@
 {
   home.username = "tommy";
   home.homeDirectory = "/home/tommy";
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.11";
   programs = {
     git = {
       enable = true;
@@ -27,11 +27,5 @@
       enableBashIntegration = true;
       nix-direnv.enable = true;
     };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      vimAlias = true;
-    };
   };
-  home.file.".config/nvim".source = ./nvim;
 }

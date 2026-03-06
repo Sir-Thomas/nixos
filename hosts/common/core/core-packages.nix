@@ -2,14 +2,17 @@
 
 {
   environment.systemPackages = with pkgs; [
+    bat
+    bitwarden-desktop
+    eza
     git
-    tree
+    helix
+    ripgrep
     usbutils
-    wget
     zellij
   ];
 
-  environment.variables.EDITOR = "nvim";
+  environment.variables.EDITOR = "hx";
 
   services.tailscale.enable = true;
 }
