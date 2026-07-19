@@ -14,11 +14,9 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
-    powertop
   ];
 
   services.printing.enable = true;
-  services.tlp.enable = true;
   services.logind.settings.Login = {
     HandlePowerKey = "suspend";
   };
