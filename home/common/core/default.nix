@@ -17,6 +17,7 @@
       enable = true;
       shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake ~/nixos/";
+        nrb = "sudo nixos-rebuild boot --flake ~/nixos/";
         gc = "sudo nix-collect-garbage -d";
         cb = "sudo /run/current-system/bin/switch-to-configuration boot";
         tofi-fix = "rm ~/.cache/tofi-drun";
