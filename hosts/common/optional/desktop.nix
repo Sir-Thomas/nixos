@@ -4,6 +4,7 @@
   programs.firefox.enable = true;
   
   environment.systemPackages = with pkgs; [
+    ladybird
     obsidian
     pulseaudio
     watchmate
