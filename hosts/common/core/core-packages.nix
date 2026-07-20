@@ -3,10 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     bat
-    bitwarden-desktop
     eza
     git
     helix
+    neovim
     ripgrep
     usbutils
     zellij
