@@ -5,14 +5,14 @@
     bat
     eza
     git
-    helix
     neovim
     ripgrep
     usbutils
     zellij
   ];
 
-  environment.variables.EDITOR = "hx";
+  environment.variables.EDITOR = "nvim";
+  environment.variables.VISUAL = "nvim";
 
   services.tailscale.enable = true;
 }
