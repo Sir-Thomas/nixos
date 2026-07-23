@@ -13,6 +13,4 @@
 
   environment.variables.EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
-
-  services.tailscale.enable = true;
 }
