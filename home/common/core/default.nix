@@ -21,6 +21,8 @@
         gc = "sudo nix-collect-garbage -d";
         cb = "sudo /run/current-system/bin/switch-to-configuration boot";
         tofi-fix = "rm ~/.cache/tofi-drun";
+	vi = "nvim";
+	vim = "nvim";
       };
     };
     direnv = {
