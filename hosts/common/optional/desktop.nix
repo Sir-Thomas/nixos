@@ -7,6 +7,7 @@
     ladybird
     obsidian
     pulseaudio
+    vivaldi
     watchmate
   ];
 
