@@ -6,6 +6,7 @@
       ./core-packages.nix
       ./fonts.nix
       ./networkmanager.nix
+      ./ssh.nix
       ./systemd-boot.nix
       ./timezone.nix
       ./users.nix
