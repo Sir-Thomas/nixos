@@ -14,6 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
+    fw-ectool
     remmina
   ];
 
