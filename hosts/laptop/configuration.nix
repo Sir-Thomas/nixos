@@ -14,9 +14,10 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
-    framework-control
     remmina
   ];
+
+  services.framework-control.enable = true;
 
   services.printing.enable = true;
   services.logind.settings.Login = {
