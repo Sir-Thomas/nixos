@@ -1,18 +1,12 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
+  imports = [ inputs.nixvim.homeModules.nixvim ];
+
   home.username = "tommy";
   home.homeDirectory = "/home/tommy";
   home.stateVersion = "25.11";
   programs = {
-    git = {
-      enable = true;
-      settings = {
-        user.name = "Sir-Thomas";
-        user.email = "tp8153@gmail.com";
-        init.defaultBranch = "main";
-      };
-    };
     bash = {
       enable = true;
       shellAliases = {
@@ -25,10 +19,48 @@
 	vim = "nvim";
       };
     };
+
     direnv = {
       enable = true;
       enableBashIntegration = true;
       nix-direnv.enable = true;
+    };
+
+    git = {
+      enable = true;
+      settings = {
+        user.name = "Sir-Thomas";
+        user.email = "tp8153@gmail.com";
+        init.defaultBranch = "main";
+      };
+    };
+    
+    nixvim = {
+      enable = true;
+
+      colorschemes.gruvbox.enable = true;
+
+      plugins = {
+        bufferline.enable = true;
+        lualine.enable = true;
+	luasnip.enable = true;
+	telescope.enable = true;
+	oil.enable = true;
+	web-devicons.enable = true;
+      };
+
+      plugins.lsp = {
+        enable = true;
+	servers = {
+	  ts_ls.enable = true;
+	  lua_ls.enable = true;
+	  rust_analyzer = {
+	    enable = true;
+	    installCargo = false;
+	    installRustc = false;
+	  };
+	};
+      };
     };
   };
 }

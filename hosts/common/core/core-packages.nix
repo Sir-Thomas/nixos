@@ -5,7 +5,6 @@
     bat
     eza
     git
-    neovim
     ripgrep
     usbutils
     zellij
