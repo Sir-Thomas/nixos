@@ -40,6 +40,14 @@
 
       colorschemes.gruvbox.enable = true;
 
+      globals.mapleader = " ";
+      globals.maplocalleader = " ";
+
+      opts = {
+        scrolloff = 8; # Keeps 8 lines visible above/below the cursor
+        sidescrolloff = 8; # Keeps 8 columns visible to the left/right of the cursor
+      };
+
       plugins = {
         bufferline.enable = true;
         lualine.enable = true;
@@ -61,6 +69,33 @@
 	  };
 	};
       };
+
+      keymaps = [
+        {
+          mode = "n";
+          key = "<leader>e";
+          action = "<cmd>lua vim.diagnostic.open_float()<CR>";
+          options.desc = "Open diagnostic float";
+        }
+        {
+          mode = "n";
+          key = "gd";
+          action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+          options.desc = "Go to definition";
+        }
+        {
+          mode = "n";
+          key = "K";
+          action = "<cmd>lua vim.lsp.buf.hover()<CR>";
+          options.desc = "Show documentation";
+        }
+	{
+          mode = "n";
+          key = "<leader>d";
+          action = "<cmd>lua vim.diagnostic.jump({ count = 1 })<CR>";
+          options.desc = "Next diagnostic";
+        }
+      ];
     };
   };
 }
