@@ -5,6 +5,7 @@
     bat
     eza
     git
+    lazygit
     ripgrep
     usbutils
     zellij
