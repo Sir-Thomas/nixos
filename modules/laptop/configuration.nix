@@ -1,14 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../common/core/default.nix
-      ../common/optional/desktop.nix
-      ../common/optional/gaming.nix
-      ../common/optional/work.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../core/default.nix
+    ../optional/workstation.nix
+  ];
 
   networking.hostName = "laptop";
 
@@ -20,7 +17,6 @@
 
   services.framework-control.enable = true;
 
-  services.printing.enable = true;
   services.logind.settings.Login = {
     HandlePowerKey = "suspend";
   };

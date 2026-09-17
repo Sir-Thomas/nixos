@@ -17,6 +17,7 @@
         tofi-fix = "rm ~/.cache/tofi-drun";
 	vi = "nvim";
 	vim = "nvim";
+	ls = "eza";
       };
     };
 

@@ -4,8 +4,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../common/core/default.nix
-      ./services/all-services.nix
+      ../core/default.nix
+      ../optional/services/default.nix
     ];
 
   networking.hostName = "server"; # Define your hostname.

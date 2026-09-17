@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./gaming.nix
+    ./work.nix
+  ];
+
   programs.firefox.enable = true;
   
   environment.systemPackages = with pkgs; [
@@ -12,6 +17,8 @@
 
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
+
+  services.printing.enable = true;
 
   services.keyd = {
    enable = true;
