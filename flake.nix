@@ -17,13 +17,13 @@
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/desktop/configuration.nix
+          ./modules/desktop/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.tommy = import ./home/desktop.nix;
+              users.tommy = import ./home/tommy.nix;
               backupFileExtension = "backup";
 	      extraSpecialArgs = {inherit inputs;};
             };
@@ -33,13 +33,13 @@
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	modules = [
-	  ./hosts/laptop/configuration.nix
+	  ./modules/laptop/configuration.nix
 	  home-manager.nixosModules.home-manager
 	  {
 	    home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.tommy = import ./home/laptop.nix;
+              users.tommy = import ./home/tommy.nix;
               backupFileExtension = "backup";
 	      extraSpecialArgs = {inherit inputs;};
 	    };
@@ -49,13 +49,13 @@
       server = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	modules = [
-	  ./hosts/server/configuration.nix
+	  ./modules/server/configuration.nix
 	  home-manager.nixosModules.home-manager
 	  {
 	    home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.tommy = import ./home/server.nix;
+              users.tommy = import ./home/tommy.nix;
               backupFileExtension = "backup";
 	      extraSpecialArgs = {inherit inputs;};
 	    };
