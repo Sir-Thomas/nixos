@@ -51,6 +51,7 @@
 
       plugins = {
         bufferline.enable = true;
+	lazygit.enable = true;
         lualine.enable = true;
 	luasnip.enable = true;
 	telescope.enable = true;
@@ -71,11 +72,20 @@
 	};
       };
 
+      plugins.lsp-signature = {
+        enable = true;
+        settings = {
+          hint_enable = true;
+          window.border = "rounded";
+        };
+      };
+
       plugins.cmp = {
         enable = true;
         autoEnableSources = true;
         settings.sources = [
           { name = "nvim_lsp"; }
+	  { name = "nvim_lsp_signature_help"; }
           { name = "path"; }
           { name = "buffer"; }
         ];
@@ -114,6 +124,18 @@
           key = "<leader>d";
           action = "<cmd>lua vim.diagnostic.jump({ count = 1 })<CR>";
           options.desc = "Next diagnostic";
+        }
+	{
+	  mode = "n";
+	  key = "<leader>r";
+	  action = "<cmd>w<CR><cmd>lua vim.system({'cargo', 'run'}, { detach = true })<CR>";
+	  options.desc = "run cargo project";
+	}
+	{
+          mode = "n";
+          key = "<leader>g";
+          action = "<cmd>LazyGit<CR>";
+          options.desc = "Open Lazygit floating window";
         }
       ];
     };
