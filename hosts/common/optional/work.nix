@@ -6,4 +6,7 @@
     omnissa-horizon-client
     stoken
   ];
+
+  services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.enable = true;
 }
