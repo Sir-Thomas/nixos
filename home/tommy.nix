@@ -45,6 +45,8 @@
       globals.maplocalleader = " ";
 
       opts = {
+        number = true;
+	relativenumber = true;
         scrolloff = 8; # Keeps 8 lines visible above/below the cursor
         sidescrolloff = 8; # Keeps 8 columns visible to the left/right of the cursor
       };
