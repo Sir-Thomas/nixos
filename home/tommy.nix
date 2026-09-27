@@ -42,7 +42,7 @@
 
     lazygit = {
       enable = true;
-      settings.git.diffRenders = [
+      settings.git.diffRenderers = [
         {
           command = "delta --paging=never";
         }
