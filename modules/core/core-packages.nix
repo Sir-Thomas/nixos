@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     bat
     eza
+    fd
     git
     just
     nixfmt-rs
