@@ -33,6 +33,13 @@
         user.name = "Sir-Thomas";
         user.email = "tp8153@gmail.com";
         init.defaultBranch = "main";
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
+      options = {
+        side-by-side = true;
+        line-numbers = true;
+        navigate = true;
       };
     };
     
@@ -63,15 +70,16 @@
 
       plugins.lsp = {
         enable = true;
-	servers = {
-	  ts_ls.enable = true;
-	  lua_ls.enable = true;
-	  rust_analyzer = {
-	    enable = true;
-	    installCargo = false;
-	    installRustc = false;
-	  };
-	};
+        servers = {
+          ts_ls.enable = true;
+          lua_ls.enable = true;
+          nixd.enable = true;
+          rust_analyzer = {
+            enable = true;
+            installCargo = false;
+            installRustc = false;
+          };
+        };
       };
 
       plugins.lsp-signature = {
@@ -99,6 +107,21 @@
           "<CR>" = "cmp.mapping.confirm({ select = true })";
           "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
           "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+        };
+      };
+
+      # Auto Formatting
+      plugins.conform-nvim = {
+        enable = true;
+        settings = {
+          format_on_save = {
+            timeout_ms = 250;
+            lsp_format = "fallback";
+          };
+          formatters_by_ft = {
+            nix = [ "nixfmt" ];
+            rust = [ "rustfmt" ];
+          };
         };
       };
 
