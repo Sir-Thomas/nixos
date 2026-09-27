@@ -5,7 +5,12 @@
   users.extraGroups.dialout = { };
   users.users.tommy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "plugdev" "networkmanager" "dialout" ];
+    extraGroups = [
+      "wheel"
+      "plugdev"
+      "networkmanager"
+      "dialout"
+    ];
   };
 
   security.sudo.wheelNeedsPassword = false;

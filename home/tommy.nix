@@ -1,4 +1,7 @@
-{ config, inputs, pkgs, ... }:
+{
+  inputs,
+  ...
+}:
 
 {
   imports = [ inputs.nixvim.homeModules.nixvim ];
@@ -15,9 +18,9 @@
         gc = "sudo nix-collect-garbage -d";
         cb = "sudo /run/current-system/bin/switch-to-configuration boot";
         tofi-fix = "rm ~/.cache/tofi-drun";
-	vi = "nvim";
-	vim = "nvim";
-	ls = "eza";
+        vi = "nvim";
+        vim = "nvim";
+        ls = "eza";
       };
     };
 
@@ -33,6 +36,19 @@
         user.name = "Sir-Thomas";
         user.email = "tp8153@gmail.com";
         init.defaultBranch = "main";
+        pull.rebase = true;
+      };
+    };
+
+    lazygit = {
+      enable = true;
+      settings.git.diffRenders = [
+        {
+          command = "delta --paging=never";
+        }
+      ];
+    };
+
     delta = {
       enable = true;
       enableGitIntegration = true;
@@ -42,7 +58,7 @@
         navigate = true;
       };
     };
-    
+
     nixvim = {
       enable = true;
 
@@ -53,19 +69,19 @@
 
       opts = {
         number = true;
-	relativenumber = true;
+        relativenumber = true;
         scrolloff = 8; # Keeps 8 lines visible above/below the cursor
         sidescrolloff = 8; # Keeps 8 columns visible to the left/right of the cursor
       };
 
       plugins = {
         bufferline.enable = true;
-	lazygit.enable = true;
+        lazygit.enable = true;
         lualine.enable = true;
-	luasnip.enable = true;
-	telescope.enable = true;
-	oil.enable = true;
-	web-devicons.enable = true;
+        luasnip.enable = true;
+        telescope.enable = true;
+        oil.enable = true;
+        web-devicons.enable = true;
       };
 
       plugins.lsp = {
@@ -95,11 +111,11 @@
         autoEnableSources = true;
         settings.sources = [
           { name = "nvim_lsp"; }
-	  { name = "nvim_lsp_signature_help"; }
+          { name = "nvim_lsp_signature_help"; }
           { name = "path"; }
           { name = "buffer"; }
         ];
-	settings.mapping = {
+        settings.mapping = {
           "<C-Space>" = "cmp.mapping.complete()";
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-e>" = "cmp.mapping.close()";
@@ -144,19 +160,19 @@
           action = "<cmd>lua vim.lsp.buf.hover()<CR>";
           options.desc = "Show documentation";
         }
-	{
+        {
           mode = "n";
           key = "<leader>d";
           action = "<cmd>lua vim.diagnostic.jump({ count = 1 })<CR>";
           options.desc = "Next diagnostic";
         }
-	{
-	  mode = "n";
-	  key = "<leader>r";
-	  action = "<cmd>w<CR><cmd>lua vim.system({'cargo', 'run'}, { detach = true })<CR>";
-	  options.desc = "run cargo project";
-	}
-	{
+        {
+          mode = "n";
+          key = "<leader>r";
+          action = "<cmd>w<CR><cmd>lua vim.system({'cargo', 'run'}, { detach = true })<CR>";
+          options.desc = "run cargo project";
+        }
+        {
           mode = "n";
           key = "<leader>g";
           action = "<cmd>LazyGit<CR>";

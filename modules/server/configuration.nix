@@ -1,12 +1,17 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../core/default.nix
-      ../optional/services/default.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../core/default.nix
+    ../optional/services/default.nix
+  ];
 
   networking.hostName = "server"; # Define your hostname.
 
@@ -17,4 +22,3 @@
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
-

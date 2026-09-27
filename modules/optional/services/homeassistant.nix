@@ -13,7 +13,7 @@
       image = "ghcr.io/esphome/esphome:latest";
       volumes = [
         "esphome-config:/config"
-	"/etc/localtime:/etc/localtime:ro"
+        "/etc/localtime:/etc/localtime:ro"
       ];
       ports = [ "6052:6052" ];
     };

@@ -7,7 +7,7 @@
   ];
 
   programs.firefox.enable = true;
-  
+
   environment.systemPackages = with pkgs; [
     obsidian
     pulseaudio
@@ -21,9 +21,9 @@
   services.printing.enable = true;
 
   services.keyd = {
-   enable = true;
-   keyboards.default.settings = {
+    enable = true;
+    keyboards.default.settings = {
       main.capslock = "escape";
-   };
+    };
   };
 }
