@@ -6,7 +6,6 @@
     eza
     git
     just
-    lazygit
     ripgrep
     usbutils
     zellij
