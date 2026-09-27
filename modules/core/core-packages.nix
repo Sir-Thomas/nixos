@@ -6,6 +6,7 @@
     eza
     git
     just
+    nixfmt-rs
     ripgrep
     usbutils
     zellij
