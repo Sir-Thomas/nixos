@@ -20,8 +20,17 @@
         tofi-fix = "rm ~/.cache/tofi-drun";
         vi = "nvim";
         vim = "nvim";
-        ls = "eza";
+        cat = "bat";
       };
+    };
+
+    eza = {
+      enable = true;
+      git = true;
+      icons = "auto";
+      extraOptions = [
+        "--git-ignore"
+      ];
     };
 
     direnv = {
