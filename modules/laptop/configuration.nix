@@ -13,11 +13,13 @@
   ];
 
   networking.hostName = "laptop";
+  networking.wireguard.enable = true;
 
   environment.systemPackages = with pkgs; [
     brightnessctl
     fw-ectool
     remmina
+    wireguard-tools
   ];
 
   services.framework-control.enable = true;
