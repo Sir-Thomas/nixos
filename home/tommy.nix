@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   ...
 }:
 
@@ -71,6 +72,10 @@
     nixvim = {
       enable = true;
 
+      extraPackages = with pkgs; [
+        prettier
+      ];
+
       colorschemes.gruvbox.enable = true;
 
       globals.mapleader = " ";
@@ -96,7 +101,7 @@
       plugins.lsp = {
         enable = true;
         servers = {
-          ts_ls.enable = true;
+          html.enable = true;
           lua_ls.enable = true;
           nixd.enable = true;
           rust_analyzer = {
@@ -104,6 +109,7 @@
             installCargo = false;
             installRustc = false;
           };
+          ts_ls.enable = true;
         };
       };
 
@@ -144,8 +150,13 @@
             lsp_format = "fallback";
           };
           formatters_by_ft = {
+            css = [ "prettier" ];
+            html = [ "prettier" ];
+            javascript = [ "prettier" ];
+            json = [ "prettier" ];
             nix = [ "nixfmt" ];
             rust = [ "rustfmt" ];
+            typescript = [ "prettier" ];
           };
         };
       };
