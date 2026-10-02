@@ -29,9 +29,6 @@
       enable = true;
       git = true;
       icons = "auto";
-      extraOptions = [
-        "--git-ignore"
-      ];
     };
 
     direnv = {
