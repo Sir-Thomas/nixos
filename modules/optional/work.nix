@@ -8,5 +8,7 @@
   ];
 
   services.desktopManager.gnome.enable = true;
-  # services.displayManager.gdm.enable = true;
+  # Cosmic doesn't like it when gnome does ibus things
+  # This line turns that off
+  i18n.inputMethod.enable = false;
 }
