@@ -23,7 +23,7 @@
   services.keyd = {
     enable = true;
     keyboards.default.settings = {
-      main.capslock = "escape";
+      main.capslock = "overload(control, esc)";
     };
   };
 }
