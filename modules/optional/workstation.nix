@@ -9,8 +9,10 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
+    librewolf
     obsidian
     pulseaudio
+    qutebrowser
     vivaldi
     watchmate
   ];
