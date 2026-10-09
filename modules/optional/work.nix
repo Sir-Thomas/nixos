@@ -7,6 +7,15 @@
     stoken
   ];
 
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+
+  home-manager.users.tommy.imports = [
+    ../../home/work.nix
+  ];
+
   services.desktopManager.gnome.enable = true;
   # Cosmic doesn't like it when gnome does ibus things
   # This line turns that off
