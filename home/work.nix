@@ -2,8 +2,8 @@
 
 let
   horizonGamescope = pkgs.writeShellScriptBin "horizon-gamescope" ''
-    W=1920
-    H=1080
+    W=2560
+    H=1440
     FPS=60
 
     exec ${pkgs.gamescope}/bin/gamescope \
