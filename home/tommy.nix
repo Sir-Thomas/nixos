@@ -107,6 +107,10 @@
             installRustc = false;
           };
           ts_ls.enable = true;
+          zls = {
+            enable = true;
+            package = null;
+          };
         };
       };
 
@@ -154,6 +158,7 @@
             nix = [ "nixfmt" ];
             rust = [ "rustfmt" ];
             typescript = [ "prettier" ];
+            zig = [ "zls" ];
           };
         };
       };
