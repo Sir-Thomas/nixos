@@ -90,7 +90,6 @@
         lazygit.enable = true;
         lualine.enable = true;
         luasnip.enable = true;
-        telescope.enable = true;
         oil.enable = true;
         web-devicons.enable = true;
       };
@@ -160,6 +159,19 @@
             typescript = [ "prettier" ];
             zig = [ "zls" ];
           };
+        };
+      };
+
+      plugins.telescope = {
+        enable = true;
+        extensions = {
+          fzf-native.enable = true;
+        };
+        keymaps = {
+          "<leader>ff" = "find_files";
+          "<leader>fg" = "live_grep";
+          "<leader>fb" = "buffers";
+          "<leader>fh" = "help_tags";
         };
       };
 
