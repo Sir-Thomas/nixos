@@ -1,7 +1,3 @@
-# Urgent
-- [x] Fix hyprland not starting on desktop
-- [x] Fix mouse sensitivity on desktop
-
 # Goals
 - [x] Build system using flakes
 - [x] Use Home Manager to configure dotfiles
