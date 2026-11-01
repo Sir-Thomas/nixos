@@ -68,15 +68,19 @@
 
     nixvim = {
       enable = true;
+      clipboard.providers.wl-copy.enable = true;
+
+      globals.mapleader = " ";
+      globals.maplocalleader = " ";
 
       extraPackages = with pkgs; [
         prettier
       ];
 
       colorschemes.gruvbox.enable = true;
-
-      globals.mapleader = " ";
-      globals.maplocalleader = " ";
+      extraConfigLua = ''
+        vim.env.BAT_THEME = "gruvbox-dark"
+      '';
 
       opts = {
         number = true;
@@ -176,6 +180,18 @@
       };
 
       keymaps = [
+        {
+          mode = [
+            "n"
+            "v"
+          ];
+          key = "<leader>y";
+          action = "\"+y";
+          options = {
+            desc = "Copy to system clipboard";
+            silent = true;
+          };
+        }
         {
           mode = "n";
           key = "<leader>e";
