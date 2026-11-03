@@ -13,6 +13,17 @@
   environment.systemPackages = with pkgs; [
   ];
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-rocm;
+    host = "0.0.0.0";
+    openFirewall = true;
+    environmentVariables = {
+      OLLAMA_CONTEXT_LENGTH = "32768";
+      OLLAMA_KV_CACHE_TYPE = "q8_0";
+    };
+  };
+
   hardware.bluetooth.enable = true;
 
   hardware.probe-rs.enable = true;
