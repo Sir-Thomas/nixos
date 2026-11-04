@@ -149,7 +149,7 @@
       plugins.conform-nvim = {
         enable = true;
         settings = {
-          format_on_save = {
+          format_after_save = {
             timeout_ms = 250;
             lsp_format = "fallback";
           };
@@ -161,7 +161,7 @@
             nix = [ "nixfmt" ];
             rust = [ "rustfmt" ];
             typescript = [ "prettier" ];
-            zig = [ "zls" ];
+            zig = [ "zigfmt" ];
           };
         };
       };
