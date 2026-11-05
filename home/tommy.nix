@@ -230,5 +230,52 @@
         }
       ];
     };
+
+    pi-coding-agent = {
+      enable = true;
+      models = {
+        providers = {
+          ollama = {
+            baseUrl = "https://ollama.thepriest.family/v1";
+            api = "openai-completions";
+            apiKey = "ollama";
+            settings = {
+              compaction = {
+                enabled = true;
+                keepRecentTokens = 20000;
+                reserveTokens = 16384;
+              };
+              defaultModel = "gemma4:12b";
+              defaultThinkingLevel = "medium";
+              packages = [
+              ];
+            };
+            models = [
+              {
+                id = "devstral-small-2:24b";
+                #"contextWindow" = 32768;
+                #"maxTokens" = 8192;
+                # I shouldn't need these if I can do 128k context
+              }
+              {
+                id = "qwen3.5:2b";
+              }
+              {
+                id = "qwen3.5:9b";
+              }
+              {
+                id = "qwen2.5-coder:14b";
+              }
+              {
+                id = "gemma4:12b";
+              }
+              {
+                id = "llama3.1:8b";
+              }
+            ];
+          };
+        };
+      };
+    };
   };
 }
