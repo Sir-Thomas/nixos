@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     librewolf
     obsidian
+    orca-slicer
     pulseaudio
     watchmate
   ];
