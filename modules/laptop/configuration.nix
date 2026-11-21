@@ -22,6 +22,18 @@
     wireguard-tools
   ];
 
+  services.udev.packages = [
+    pkgs.game-devices-udev-rules
+    (pkgs.writeTextFile {
+      name = "ingenic-dfu-udev-rules";
+      destination = "/etc/udev/rules.d/51-ingenic-dfu.rules";
+      text = ''
+        SUBSYSTEM=="usb", ATTR{idVendor}=="a108", MODE="0666", TAG+="uaccess"
+        SUBSYSTEM=="usb", ATTR{idVendor}=="601a", MODE="0666", TAG+="uaccess"
+      '';
+    })
+  ];
+
   services.framework-control.enable = true;
 
   services.logind.settings.Login = {
