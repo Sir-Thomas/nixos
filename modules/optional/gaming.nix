@@ -10,4 +10,10 @@
       proton-ge-bin
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    dolphin-emu
+  ];
+
+  hardware.xpadneo.enable = true;
 }
