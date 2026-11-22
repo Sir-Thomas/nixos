@@ -59,10 +59,10 @@
             }
           ];
         };
-        server = nixpkgs.lib.nixosSystem {
+        hab = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./modules/server/configuration.nix
+            ./modules/hab/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
