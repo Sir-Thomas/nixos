@@ -11,3 +11,9 @@ clean:
 update:
     nix flake update --flake ~/nixos/
     sudo nixos-rebuild switch --flake ~/nixos/
+
+deploy host:
+    nixos-rebuild switch --flake ".#{{host}}" --target-host "{{host}}" --sudo
+
+deploy-all:
+    just deploy hab
