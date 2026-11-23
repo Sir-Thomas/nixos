@@ -8,6 +8,7 @@
     just
     nixfmt-rs
     ripgrep
+    unzip
     usbutils
     zellij
   ];
